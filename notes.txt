@@ -1,0 +1,5 @@
+Create TLS certificate for Mosquitto
+https://asciinema.org/a/201826
+http://www.steves-internet-guide.com/mosquitto-tls/
+https://www.emqx.io/blog/connect-to-mqtt-broker-with-websocket
+
