@@ -186,10 +186,14 @@ void loop() {
       }
       mqttPublishTemp(temp);
       mqttPublishHumidity(humid);
+      nextTime += INTERVAL;
    }
 
-   if (mqttReconnect()) {
-      mqttClient.loop();
+   static uint32_t nextTimeMqtt;
+   if (millis() - nextTimeMqtt >= 100) {
+      if (mqttReconnect()) {
+         mqttClient.loop();
+      }
+      nextTimeMqtt += 100;
    }
-
 }
